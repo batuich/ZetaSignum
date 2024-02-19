@@ -1,0 +1,141 @@
+@use 'sass:math'
+@import 'normalize.css'
+
+$gray: #9AAFCB
+$aqua: #46E3FF
+$black: #000
+$white: #FFF
+
+$mobileBP: 576px
+@mixin mobile-breakpoint 
+	@media only screen and (max-width: $mobileBP)
+		@content
+
+@mixin font-face($family, $file, $path, $svg, $weight: normal, $style: normal)
+	@font-face
+		font-family: $family
+		src: url($path + $file + '.eot')
+		src: url($path + $file + '.eot?#iefix') format('embedded-opentype'), url($path + $file + '.woff') format('woff'), url($path + $file + '.ttf') format('truetype'), url($path + $file + '.svg##{$svg}') format('svg')
+		font-weight: $weight
+		font-style: $style
+
+@include font-face('TTLakesNeue', 'TT_Lakes_Neue_Regular', '../fonts/', '')
+
+body
+	background-color: $black
+	color: $white
+
+a
+	color: $white
+	text-decoration: none
+a:hover
+	color: $aqua
+
+.gray
+	color: $gray
+
+.hide
+	display: none
+
+.wrapper
+	width: 100%
+	height: 100vh
+	overflow: hidden
+	position: relative
+
+.words, .descr, .logo, .footer, .footer-contact, .footer-year
+	font-family: 'TTLakesNeue'
+	text-transform: uppercase
+	position: absolute
+	display: flex
+	z-index: 10
+
+.words
+	font-size: math.div(28, 1440) * 100 * 1vw
+	line-height: math.div(36, 1440) * 100 * 1vw
+	top: math.div(32, 1440) * 100 * 1vw
+	left: math.div(38, 1440) * 100 * 1vw
+	flex-direction: column
+	.words-item
+		margin-bottom: math.div(0, 1440) * 100 * 1vw
+		opacity: 0
+
+.descr
+	font-size: math.div(24, 1440) * 100 * 1vw
+	line-height: math.div(32, 1440) * 100 * 1vw
+	top: math.div(34, 1440) * 100 * 1vw
+	right: math.div(38, 1440) * 100 * 1vw
+	flex-direction: column
+	.descr-item
+		text-align: right
+		opacity: 0
+
+#logo
+	position: absolute
+	z-index: 10
+	left: math.div(40, 1440) * 100 * 1vw
+	bottom: math.div(76, 1440) * 100 * 1vw
+	width: math.div(360, 1440) * 100 * 1vw
+
+.footer
+	flex-direction: row
+	font-size: math.div(20, 1440) * 100 * 1vw
+	line-height: math.div(24, 1440) * 100 * 1vw
+	width: 100%
+	left: math.div(0, 1440) * 100 * 1vw
+	bottom: math.div(0, 1440) * 100 * 1vw
+	.footer-item
+		opacity: 0
+	.footer-contact
+		left: math.div(39, 1440) * 100 * 1vw
+		bottom: math.div(35, 1440) * 100 * 1vw
+		a
+			position: relative
+			margin-left: math.div(40, 1440) * 100 * 1vw
+		a::before
+			position: absolute
+			top: math.div(6, 1440) * 100 * 1vw
+			left: -(math.div(20, 1440) * 100 * 1vw)
+			width: math.div(16, 1440) * 100 * 1vw
+			height: math.div(16, 1440) * 100 * 1vw
+			content: ''
+			background: center no-repeat url("../img/link.svg")
+		a::after
+			content: ''
+			position: absolute
+			width: calc(100% - 4px)
+			transform: scaleX(0)
+			height: 1px
+			bottom: 4px
+			left: 2px
+			background-color: $aqua
+			transform-origin: bottom right
+			transition: transform 0.35s ease-out
+		a:hover::after
+			transform: scaleX(1)
+			transform-origin: bottom left
+	.footer-year
+		right: math.div(39, 1440) * 100 * 1vw
+		bottom: math.div(35, 1440) * 100 * 1vw
+
+.back
+	position: absolute
+	z-index: 0
+	width: 100%
+	height: 100%
+	.preload
+		z-index: 10
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%,-50%)
+		width: math.div(775, 1440) * 100 * 1vw
+		height: math.div(821, 1440) * 100 * 1vw
+	video
+		z-index: 0
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%,-50%)
+		width: math.div(860, 1440) * 100 * 1vw
+		height: math.div(860, 1440) * 100 * 1vw

@@ -6,6 +6,18 @@ const TABLET_BREAKPOINT = 768;
 const ANIME_FIRST_DELAY =200;
 const TEXT_ANIME_DURATION = 150;
 const TEXT_ANIME_STAGGER = 100;
+const MOBILE_SCREEN =  document.documentElement.clientWidth < MOBILE_BREAKPOINT ? true : false;
+
+window.addEventListener('DOMContentLoaded', () => {
+	if(MOBILE_SCREEN){
+		document.querySelector('.preload').remove();
+		document.querySelector('video').remove();
+		let mobileBack = document.createElement('img');
+		mobileBack.src = 'img/back-mobile.jpg';
+		mobileBack.classList.add('mobile-back');
+		document.querySelector('.back').appendChild(mobileBack);
+	}
+});
 
 window.addEventListener('load', () => {
 
@@ -86,5 +98,6 @@ window.addEventListener('load', () => {
 		delay: anime.stagger(TEXT_ANIME_STAGGER),
 		autoplay: false
 	});
-	document.querySelector('.preload').classList.add('hide');
+
+	if(!MOBILE_SCREEN) document.querySelector('.preload').classList.add('hide');
 });

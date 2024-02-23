@@ -30,33 +30,6 @@ window.addEventListener('load', () => {
 		path: 'lottie/logo.json' // the path to the animation json
 	});
 
-	// words animation
-	let wordsAnime = anime({
-		targets: '.words-item',
-		keyframes: [
-			{
-				duration: ANIME_FIRST_DELAY,
-				opacity: 0,
-				translateY: -20,
-			},
-			{
-				duration: 0,
-				opacity: 0,
-				translateY: -20,
-			},
-			{
-				duration: TEXT_ANIME_DURATION,
-				opacity: 1,
-				translateY: 0,
-			}
-		],
-		easing: 'linear',
-		delay: anime.stagger(TEXT_ANIME_STAGGER),
-		autoplay: true,
-		complete: () => {
-			descrAnime.play();
-		}
-		});
 	// descr animation
 	let descrAnime = anime({
 		targets: '.descr-item',
@@ -74,7 +47,7 @@ window.addEventListener('load', () => {
 		],
 		easing: 'linear',
 		delay: anime.stagger(TEXT_ANIME_STAGGER),
-		autoplay: false,
+		autoplay: true,
 		complete: () => {
 			footerAnime.play();
 		}

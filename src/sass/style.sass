@@ -49,27 +49,12 @@ a:hover
 		height: 100vh
 		height: 100svh
 
-.words, .descr, .logo, .footer, .footer-contact, .footer-year
+.descr, .logo, .footer, .footer-contact
 	font-family: 'TTLakesNeue'
 	text-transform: uppercase
 	position: absolute
 	display: flex
 	z-index: 10
-
-.words
-	font-size: math.div(28, 1440) * 100 * 1vw
-	line-height: math.div(36, 1440) * 100 * 1vw
-	top: math.div(32, 1440) * 100 * 1vw
-	left: math.div(38, 1440) * 100 * 1vw
-	flex-direction: column
-	@include mobile-breakpoint
-		font-size: math.div(16, 320) * 100 * 1vw
-		line-height: math.div(20, 320) * 100 * 1vw
-		top: math.div(12, 320) * 100 * 1vw
-		left: math.div(15, 320) * 100 * 1vw
-	.words-item
-		margin-bottom: math.div(0, 1440) * 100 * 1vw
-		opacity: 0
 
 .descr
 	font-size: math.div(24, 1440) * 100 * 1vw
@@ -80,7 +65,7 @@ a:hover
 	@include mobile-breakpoint
 		font-size: math.div(16, 320) * 100 * 1vw
 		line-height: math.div(20, 320) * 100 * 1vw
-		top: math.div(63, 320) * 100 * 1vw
+		top: math.div(14, 320) * 100 * 1vw
 		right: math.div(15, 320) * 100 * 1vw
 	.descr-item
 		text-align: right
@@ -94,7 +79,7 @@ a:hover
 	width: math.div(360, 1440) * 100 * 1vw
 	@include mobile-breakpoint
 		left: math.div(16, 320) * 100 * 1vw
-		bottom: math.div(50, 320) * 100 * 1vw
+		bottom: math.div(38, 320) * 100 * 1vw
 		width: math.div(220, 320) * 100 * 1vw
 
 .footer
@@ -113,14 +98,13 @@ a:hover
 		left: math.div(39, 1440) * 100 * 1vw
 		bottom: math.div(35, 1440) * 100 * 1vw
 		@include mobile-breakpoint
-			flex-direction: column
 			left: math.div(15, 320) * 100 * 1vw
 			bottom: math.div(12, 320) * 100 * 1vw
 		a
 			position: relative
 			margin-left: math.div(40, 1440) * 100 * 1vw
 			@include mobile-breakpoint
-				margin-left: math.div(14, 320) * 100 * 1vw
+				margin-left: math.div(24, 320) * 100 * 1vw
 		a::before
 			position: absolute
 			top: math.div(6, 1440) * 100 * 1vw
@@ -149,12 +133,6 @@ a:hover
 		a:hover::after
 			transform: scaleX(1)
 			transform-origin: bottom left
-	.footer-year
-		right: math.div(39, 1440) * 100 * 1vw
-		bottom: math.div(35, 1440) * 100 * 1vw
-		@include mobile-breakpoint
-			right: math.div(15, 320) * 100 * 1vw
-			bottom: math.div(12, 320) * 100 * 1vw
 
 .back
 	position: absolute
@@ -181,15 +159,11 @@ a:hover
 		transform: translate(-50%,-50%)
 		width: math.div(860, 1440) * 100 * 1vw
 		height: math.div(860, 1440) * 100 * 1vw
-		@include mobile-breakpoint
-			top: calc( 50% + (math.div(30, 320) * 100 * 1vw) )
-			width: math.div(380, 320) * 100 * 1vw
-			height: math.div(380, 320) * 100 * 1vw
 	.mobile-back
 		position: absolute
 		width: math.div(300, 320) * 100 * 1vw
 		height: math.div(300, 320) * 100 * 1vw
 		left: 50%
-		top: calc( 50% + (math.div(30, 320) * 100 * 1vw) )
+		top: calc( 50% + (math.div(10, 320) * 100 * 1vw) )
 		transform: translate(-50%,-50%)
 
